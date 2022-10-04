@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'
 import { verifyUser } from './middleware/Authenticate'
 import handleError from './middleware/error-handler.middleware'
 import { dbConnection } from './config/database'
+import OrderRoutes from './routers/Order'
 dotenv.config()
 const PORT = process.env.PORT || 4000
 
@@ -17,6 +18,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use('/user', UserRoute)
 app.use('/products', verifyUser, ProductRoutes)
+app.use('/products/order', OrderRoutes)
 app.use(handleError)
 
 app.listen(PORT, () => {

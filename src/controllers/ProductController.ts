@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response } from 'express'
 import ProductShema from '../model/Productmodel'
 
 const createProduct = async (req: Request, res: Response) => {
