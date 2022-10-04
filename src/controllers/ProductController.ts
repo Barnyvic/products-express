@@ -90,7 +90,7 @@ const UpdateProduct = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         console.log(error.message)
-        res.status(404).send({ error: error.message })
+        res.status(500).send({ error: error.message })
     }
 }
 
@@ -101,7 +101,7 @@ async function deleteProduct(req: Request, res: Response) {
         res.status(200).send({ message: 'Product deleted successfully' })
     } catch (error: any) {
         console.log(error.message)
-        res.status(404).send({ error: error.message })
+        res.status(500).send({ error: error.message })
     }
 }
 export { createProduct, allProducts, UpdateProduct, deleteProduct }

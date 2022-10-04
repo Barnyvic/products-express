@@ -14,6 +14,9 @@ const OrderSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    Quantity: {
+        type: Number,
+    },
     Delivered: {
         type: Boolean,
         default: false,
